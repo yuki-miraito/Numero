@@ -28,13 +28,17 @@
 
 class Converter {
     func convert(_ number: Int) -> String {
-        var result = "" // 1
-        var localNumber = number // 2
-        if localNumber >= 5 { // 3
-            result += "V" // 4
-            localNumber = localNumber - 5 // 5
+        var result = ""
+        var localNumber = number
+        if localNumber >= 10 {
+            result += "X"
+            localNumber = localNumber - 10
         }
-        result += String(repeating: "I", count: localNumber) // 6
+        if localNumber >= 5 {
+            result += "V"
+            localNumber = localNumber - 5
+        }
+        result += String(repeating: "I", count: localNumber)
         return result
     }
 }
